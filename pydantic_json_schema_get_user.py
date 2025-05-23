@@ -4,13 +4,13 @@ from clients.users.private_users_client import get_private_users_client
 from clients.private_http_builder import AuthenticationUserSchema
 # Добавили импорт функции validate_json_schema
 from tools.assertions.schema import validate_json_schema
-from tools.fakers import get_random_email
+from tools.fakers import fake
 
 # Инициализируем публичного клиента
 public_users_client = get_public_users_client()
 # Создаем пользователя
 create_user_request = CreateUserRequestSchema(
-    email=get_random_email(),
+    email=fake.email(),
     password="string",
     last_name="string",
     first_name="string",
