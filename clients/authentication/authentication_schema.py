@@ -15,7 +15,7 @@ class LoginRequestSchema(BaseModel):
     """
     Описание структуры запроса на аутентификацию.
     """
-    email: str = Field(default_factory=fake.email)  # Добавили генерацию случайного email
+    email: EmailStr = Field(default_factory=fake.email)  # Добавили генерацию случайного email
     password: str = Field(default_factory=fake.password)  # Добавили генерацию случайного пароля
 
 
