@@ -7,8 +7,11 @@ from clients.authentication.authentication_client import get_authentication_clie
 from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
 # Импортируем функцию для проверки ответа логина
 from tools.assertions.authentication import assert_login_response
+import pytest
 
 
+@pytest.mark.regression
+@pytest.mark.authentication
 def test_login():
     # Инициализаруем клиенты
     public_users_client = get_public_users_client()
